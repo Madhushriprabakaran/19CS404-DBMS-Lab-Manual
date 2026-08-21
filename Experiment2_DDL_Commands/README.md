@@ -205,7 +205,8 @@ Insert a product with ProductID 104, Name Tablet, and Category Electronics into 
 
 ```sql
 INSERT INTO Products (ProductID,Name,Category)
-VALUES(104,'Tablet','Electronics');```
+VALUES(104,'Tablet','Electronics');
+```
 
 **Output:**
 
@@ -213,7 +214,10 @@ VALUES(104,'Tablet','Electronics');```
 <img width="1177" height="226" alt="image" src="https://github.com/user-attachments/assets/0bcbc500-3f46-41f6-b8bc-88188cb0d2a5" />
 
 
+
+
 **Question 7**
+
 ---
 Create a table named Tasks with the following columns:
 
