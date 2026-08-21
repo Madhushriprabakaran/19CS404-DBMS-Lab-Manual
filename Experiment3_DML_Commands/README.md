@@ -191,7 +191,7 @@ Write a SQL query to Delete all Doctors whose Specialization is either 'Pediatri
 ```sql
 DELETE FROM doctors
 WHERE last_name='Brown'
-AND specialization IN ('Pediatrics','Cardiology');
+AND specialization IN ('Pediatrics','Cardiology'); 
 ```
 
 **Output:**
