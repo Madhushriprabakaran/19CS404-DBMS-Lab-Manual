@@ -42,7 +42,7 @@ DROP TABLE relation_name;
 ```
 ### 4. RENAME
 Used to rename an existing database object.
-```sql
+```sqla
 RENAME TABLE old_relation_name TO new_relation_name;
 ```
 ### CONSTRAINTS
