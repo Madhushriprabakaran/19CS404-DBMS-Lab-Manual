@@ -1,5 +1,6 @@
 # Experiment 2: DDL Commands
-
+## NAME:MADHUSHRI
+## REG NO:212224040178
 ## AIM
 To study and implement DDL commands and different types of constraints.
 
@@ -105,123 +106,201 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a table named Products with the following columns:
+
+ProductID as INTEGER
+ProductName as TEXT
+Price as REAL
+Stock as INTEGER
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Products(
+ProductID INTEGER,
+ProductName TEXT,
+Price REAL,
+Stock INTEGER
+);
 ```
-
 **Output:**
+<img width="1187" height="299" alt="image" src="https://github.com/user-attachments/assets/9072db1c-a9fe-4b1e-a264-970a4e2fe61b" />
 
-![Output1](output.png)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Insert all customers from Old_customers into Customers
+
+Table attributes are CustomerID, Name, Address, Email
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO Customers(CustomerID, Name, Address, Email)
+SELECT CustomerID, Name, Address, Email
+FROM Old_customers
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1177" height="271" alt="image" src="https://github.com/user-attachments/assets/4e06706a-bf0a-4e6a-b1cb-0bc57e282457" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to Add a new ParentsNumber column  as number and Adhar_Number as Number in the Student_details table.
 
 ```sql
--- Paste your SQL code below for Question 3
+ALTER TABLE Student_details ADD ParentsNumber number;
+ALTER TABLE Student_details ADD Adhar_Number number;
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+
+<img width="1181" height="369" alt="image" src="https://github.com/user-attachments/assets/5e51962e-22d2-4a45-8cb5-a3079d76da43" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+
+Write a SQL query to Add a new column Country as text in the Student_details table.
 
 ```sql
--- Paste your SQL code below for Question 4
+
+ALTER TABLE Student_details ADD Country TEXT;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1175" height="350" alt="image" src="https://github.com/user-attachments/assets/bd5480e9-e80d-40ef-89e0-8d4e3e9beb38" />
+
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Create a table named Attendance with the following constraints:
+AttendanceID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+AttendanceDate as DATE.
+Status as TEXT should be one of 'Present', 'Absent', 'Leave'.
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE TABLE Attendance(
+AttendanceID INTEGER PRIMARY KEY,
+EmployeeID INTEGER,
+AttendanceDate DATE,
+Status TEXT CHECK (Status IN('Present','Absent','Leave')),
+FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1187" height="269" alt="image" src="https://github.com/user-attachments/assets/0840cf6a-867e-4b4a-b5c3-50fbcf336d19" />
+
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Insert a product with ProductID 104, Name Tablet, and Category Electronics into the Products table, where Price and Stock should use default values.
 
 ```sql
--- Paste your SQL code below for Question 6
-```
+INSERT INTO Products (ProductID,Name,Category)
+VALUES(104,'Tablet','Electronics');```
 
 **Output:**
 
-![Output6](output.png)
+
+<img width="1177" height="226" alt="image" src="https://github.com/user-attachments/assets/0bcbc500-3f46-41f6-b8bc-88188cb0d2a5" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Tasks with the following columns:
+
+TaskID as INTEGER
+TaskName as TEXT
+DueDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Tasks(
+TaskID INTEGER,
+TaskName TEXT,
+DueDate DATE
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1179" height="359" alt="image" src="https://github.com/user-attachments/assets/c11afacd-90bc-4885-a15d-18dbc98337e1" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Insert a new product with ProductID 101, Name Laptop, Category Electronics, Price 1500, and Stock 50 into the Products table.
 
 ```sql
--- Paste your SQL code below for Question 8
+INSERT INTO Products (ProductID,Name,Category,Price,Stock)
+VALUES(101,'Laptop','Electronics',1500,50);
 ```
 
 **Output:**
 
-![Output8](output.png)
+
+<img width="1181" height="216" alt="image" src="https://github.com/user-attachments/assets/d6810f55-1e1b-4356-acd7-d1934d0d528b" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Create a table named Shipments with the following constraints:
+ShipmentID as INTEGER should be the primary key.
+ShipmentDate as DATE.
+SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE Shipments(
+ShipmentID INTEGER PRIMARY KEY,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderId INTEGER,
+FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierId),
+FOREIGN KEY (OrderId)REFERENCES Orders(OrderID)
+
+);
 ```
 
 **Output:**
 
-![Output9](output.png)
+
+<img width="1186" height="215" alt="image" src="https://github.com/user-attachments/assets/c79f6409-ba3f-40fe-9baf-0caf04d92142" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a table named Bonuses with the following constraints:
+BonusID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+BonusAmount as REAL should be greater than 0.
+BonusDate as DATE.
+Reason as TEXT should not be NULL.
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Bonuses(
+BonusID INTEGER PRIMARY KEY,
+EmployeeID INTEGER,
+BonusAmount REAL CHECK (BonusAmount>0),
+BonusDate DATE,
+Reason TEXT NOT NULL,
+FOREIGN KEY (EmployeeID)REFERENCES
+Employees(EmployeeID)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+
+
+<img width="1186" height="259" alt="image" src="https://github.com/user-attachments/assets/0c702860-ea95-4cf3-b8ef-d5cebd486fe8" />
 
 
 ## RESULT
